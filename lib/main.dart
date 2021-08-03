@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:realtime_monitoring/views/entry_queue/entry_queue.dart';
+import 'package:realtime_monitoring/views/homepage/homepage.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: EntryQueue(),
+      home: Homepage(),
     );
   }
 }
