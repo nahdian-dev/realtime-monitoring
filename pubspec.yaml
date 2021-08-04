@@ -49,6 +49,7 @@ flutter:
   assets:
     - assets/images/bianglala.jpg
     - assets/images/polsek_logo.png
+    - assets/images/police_cartoon.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
