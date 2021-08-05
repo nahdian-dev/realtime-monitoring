@@ -28,7 +28,6 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("QUEUING APPS"),
-        backgroundColor: Colors.green,
       ),
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
@@ -36,7 +35,7 @@ class _HomepageState extends State<Homepage> {
         showUnselectedLabels: false,
         items: [
           BottomNavigationBarItem(label: "A", icon: Icon(Icons.home)),
-          BottomNavigationBarItem(label: "A", icon: Icon(Icons.people)),
+          BottomNavigationBarItem(label: "A", icon: Icon(Icons.rate_review)),
           BottomNavigationBarItem(label: "A", icon: Icon(Icons.person)),
         ],
         currentIndex: _selectedIndex,

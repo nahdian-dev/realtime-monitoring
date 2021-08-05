@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:realtime_monitoring/config/configuration.dart';
 import 'package:realtime_monitoring/controllers/todo.dart';
 import 'package:realtime_monitoring/views/form_complaint/form_complaint.dart';
 import 'package:realtime_monitoring/views/homepage/laporan_detail_menu.dart';
@@ -12,6 +13,12 @@ class HomepageContent extends StatefulWidget {
 class _HomepageContentState extends State<HomepageContent> {
   StreamSubscription _subscriptionTodo;
   int _countFb = 0;
+  String _selectedPolsek;
+
+  List _polsek = [
+    "POLSEK CINERE",
+    "POLSEK SAWANGAN",
+  ];
 
   @override
   void initState() {
@@ -35,7 +42,7 @@ class _HomepageContentState extends State<HomepageContent> {
       width: double.infinity,
       margin: EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: Colors.lightGreen,
+        color: primary,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
@@ -63,7 +70,7 @@ class _HomepageContentState extends State<HomepageContent> {
                     context,
                     PageRouteBuilder(
                         pageBuilder: (context, animation, secondaryAnimation) =>
-                            FormComplaint(),
+                            FormComplaint(selectedPolsek: _selectedPolsek),
                         transitionsBuilder:
                             (context, animation, secondaryAnimation, child) {
                           return child;
@@ -80,14 +87,36 @@ class _HomepageContentState extends State<HomepageContent> {
               SizedBox(width: 10),
 
               //ganti tempat
-              ElevatedButton(
-                onPressed: () {},
-                child: Text("Polsek Cinere"),
-                style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.blueGrey),
+              // ElevatedButton(
+              //   onPressed: () {},
+              //   child: Text("Polsek Cinere"),
+              //   style: ButtonStyle(
+              //     backgroundColor:
+              //         MaterialStateProperty.all<Color>(Colors.blueGrey),
+              //   ),
+              // ),
+
+              Container(
+                width: 120,
+                child: DropdownButton(
+                  isExpanded: true,
+                  hint: (_selectedPolsek == null)
+                      ? Text("Pilih POLSEK")
+                      : Text(_selectedPolsek),
+                  value: _selectedPolsek,
+                  items: _polsek.map((value) {
+                    return DropdownMenuItem(
+                      child: Text(value),
+                      value: value,
+                    );
+                  }).toList(),
+                  onChanged: (value) {
+                    setState(() {
+                      _selectedPolsek = value;
+                    });
+                  },
                 ),
-              )
+              ),
             ],
           ),
           SizedBox(height: 10),

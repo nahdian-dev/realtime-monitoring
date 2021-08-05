@@ -13,6 +13,9 @@ class FormComplaint extends StatelessWidget {
   final atasnamaT = TextEditingController();
   final alamatT = TextEditingController();
 
+  final String selectedPolsek;
+  FormComplaint({this.selectedPolsek});
+
   @override
   Widget build(BuildContext context) {
     final ref = databaseReference.reference();

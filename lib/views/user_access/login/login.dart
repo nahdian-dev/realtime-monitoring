@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:realtime_monitoring/views/homepage/homepage.dart';
+import 'package:realtime_monitoring/views/user_access/register/register.dart';
 
 class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: ListView(
         children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -52,14 +52,25 @@ class LoginPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context) {
+                            return RegisterPage();
+                          },
+                        ));
+                      },
                       style: ButtonStyle(
                           backgroundColor:
                               MaterialStateProperty.all<Color>(Colors.brown)),
                       child: Text("REGISTER"),
                     ),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(builder: (context) => Homepage()),
+                            (route) => false);
+                      },
                       style: ButtonStyle(
                           backgroundColor:
                               MaterialStateProperty.all<Color>(Colors.green)),
