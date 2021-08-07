@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:realtime_monitoring/config/configuration.dart';
-import 'package:realtime_monitoring/views/user_access/login/login.dart';
+import 'package:realtime_monitoring/pages/user_access/login/login.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         ),
         primarySwatch: Colors.blue,
       ),
-      home: LoginPage(),
+      home: Login(),
     );
   }
 }
