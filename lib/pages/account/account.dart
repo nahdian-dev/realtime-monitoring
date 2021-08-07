@@ -4,24 +4,29 @@ import 'package:realtime_monitoring/views/user_access/login/login.dart';
 class Account extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Support(
-          content: "Tentang Aplikasi Laporan Pengaduan",
-        ),
-        GestureDetector(
-          onTap: () {
-            Navigator.pushAndRemoveUntil(
-                context,
-                MaterialPageRoute(builder: (context) => LoginPage()),
-                (route) => false);
-          },
-          child: Support(
-            content: "Logout",
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("ACCOUNT"),
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Support(
+            content: "Tentang Aplikasi Laporan Pengaduan",
           ),
-        ),
-      ],
+          GestureDetector(
+            onTap: () {
+              Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
+                  (route) => false);
+            },
+            child: Support(
+              content: "Logout",
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

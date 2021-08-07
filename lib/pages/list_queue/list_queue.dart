@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:realtime_monitoring/config/configuration.dart';
 import 'package:realtime_monitoring/controllers/todo.dart';
-import 'package:realtime_monitoring/views/list_queue/detail_list_queue.dart';
-
+import 'package:realtime_monitoring/pages/form_add_consultation/add_consultation.dart';
+  
 class ListQueue extends StatefulWidget {
   @override
   _ListQueueState createState() => _ListQueueState();
@@ -40,7 +40,8 @@ class _ListQueueState extends State<ListQueue> {
         backgroundColor: blue,
         centerTitle: true,
         title: Text("ANTRIAN KLINIK TERDEKAT",
-            style: GoogleFonts.openSans(fontSize: 20, color: white, fontWeight: FontWeight.bold)),
+            style: GoogleFonts.openSans(
+                fontSize: 20, color: white, fontWeight: FontWeight.bold)),
       ),
       body: ListView.builder(
         itemCount: 2,
@@ -51,7 +52,7 @@ class _ListQueueState extends State<ListQueue> {
                 context,
                 PageRouteBuilder(
                     pageBuilder: (context, animation, secondaryAnimation) =>
-                        DetailListQueue(),
+                        AddConsultation(),
                     transitionsBuilder:
                         (context, animation, secondaryAnimation, child) {
                       return child;
