@@ -87,7 +87,6 @@ class _HomepageContentState extends State<HomepageContent> {
 
         Container(
           width: double.infinity,
-          height: 200,
           margin: EdgeInsets.all(20),
           padding: EdgeInsets.symmetric(vertical: 10),
           decoration: BoxDecoration(
@@ -120,7 +119,7 @@ class _HomepageContentState extends State<HomepageContent> {
                     child: Column(
                       children: [
                         Icon(Icons.notes, color: white),
-                        Text("Detail Antrian",
+                        Text("List Antrian",
                             style: GoogleFonts.openSans(color: white)),
                       ],
                     ),
@@ -143,6 +142,22 @@ class _HomepageContentState extends State<HomepageContent> {
                           color: blue,
                           fontWeight: FontWeight.bold,
                           fontSize: 40)),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                    width: 145,
+                    decoration: BoxDecoration(
+                      color: blue,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(Icons.child_care, color: white),
+                        SizedBox(width: 6),
+                        Text("Detail Antrian",
+                            style: GoogleFonts.openSans(color: white, fontWeight: FontWeight.bold)),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ],

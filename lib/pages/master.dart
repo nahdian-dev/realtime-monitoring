@@ -41,7 +41,7 @@ class _MasterState extends State<Master> {
           BottomNavigationBarItem(label: "A", icon: Icon(Icons.person)),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: blue,
         onTap: _onItemTapped,
       ),
     );
